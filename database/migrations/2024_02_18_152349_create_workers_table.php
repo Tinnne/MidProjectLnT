@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('workers', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('foto')->nullable();
+            $table->integer('umur');
+            $table->string('alamat');
+            $table->string('nomor');
             $table->timestamps();
         });
     }
