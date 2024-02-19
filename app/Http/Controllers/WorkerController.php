@@ -13,7 +13,8 @@ class WorkerController extends Controller
      */
     public function index()
     {
-        //
+        $workers = Worker::all();
+        return view('worker.index', ['workers'=> $workers]);
     }
 
     /**
@@ -21,7 +22,7 @@ class WorkerController extends Controller
      */
     public function create()
     {
-        //
+        return view('worker.create');
     }
 
     /**
@@ -29,7 +30,15 @@ class WorkerController extends Controller
      */
     public function store(StoreWorkerRequest $request)
     {
-        //
+        $worker = Worker::create([
+            'nama' => $request->nama,
+            'umur' => $request->umur,
+            'alamat' => $request->alamat,
+            'nomor' => $request->nomor,
+            'user_id' => auth()->id()
+        ]);
+        $workers = Worker::all();
+        return view('worker.index', ['workers'=> $workers]);
     }
 
     /**
@@ -37,7 +46,8 @@ class WorkerController extends Controller
      */
     public function show(Worker $worker)
     {
-        //
+        // $workers = Worker::all();
+        return view('worker.show', compact('worker'));
     }
 
     /**
@@ -45,7 +55,7 @@ class WorkerController extends Controller
      */
     public function edit(Worker $worker)
     {
-        //
+        return view('worker.edit', compact('worker'));
     }
 
     /**
@@ -53,7 +63,8 @@ class WorkerController extends Controller
      */
     public function update(UpdateWorkerRequest $request, Worker $worker)
     {
-        //
+        $worker->update($request->validated());
+        return redirect(route('worker.index'));
     }
 
     /**
@@ -61,6 +72,7 @@ class WorkerController extends Controller
      */
     public function destroy(Worker $worker)
     {
-        //
+        $worker->delete();
+        return redirect(route('worker.index'));
     }
 }

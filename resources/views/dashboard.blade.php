@@ -6,10 +6,15 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+        <div class="max-w-xl mx-auto sm:px-6 lg:px-8">
+            <div class="mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+                <div class="flex justify-center text-gray-900 dark:text-gray-100">
+                    {{ __("Log-in berhasil!") }}
+                </div>
+                <div class="flex justify-center px-6 py-4">
+                    <a href="{{route('worker.index')}}">
+                        <x-primary-button>Data Karyawan</x-primary-button>
+                    </a>
                 </div>
             </div>
         </div>

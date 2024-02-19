@@ -18,6 +18,12 @@
                 </div>
             </div>
 
+            <div class="flex flex-col justify-center">
+                <a href="{{route('worker.index')}}" class="ms-3 text-gray-400">
+                    {{ __('Atur Data Karyawan') }}
+                </a>
+            </div>
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">

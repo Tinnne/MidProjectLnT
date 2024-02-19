@@ -11,7 +11,7 @@ class UpdateWorkerRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateWorkerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nama' => 'required|string|max:20|min:5',
+            'umur' => 'required|gt:19',
+            'alamat' => 'required|string|max:40|min:10',
+            'nomor' => 'required|string|max:12|min:9|starts_with:08'
         ];
     }
 }

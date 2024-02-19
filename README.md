@@ -9,7 +9,7 @@ Nama: Austin Kane
 
 # Struktur Tabel
 1. Workers
-    - Nama, 5-10 char {required}
+    - Nama, 5-20 char {required}
     - Foto, img {nullable}
     - Umur, 20> {required}
     - Alamat, 10-40 char {required}
